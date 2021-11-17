@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 10%;
+    align-items: center;
+}
+.logo {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 0 20px;
+    cursor: pointer;
+}
+nav ul li a{
+    color: #172342;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    font-weight: bold;
+}
+button {
+    font-weight: bold;
+    font-family: 'Noto Sans KR',sans-serif;
+    padding: 15px;
+    background-color: #7747FD;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+button.navigasi {
+    margin-left: 20px;
+}
+button:hover {
+    background-color: #4712d6;
+}
+/* Hamburger menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+.menu-toggle input {
+    position: absolute;
+    opacity: 0;
+    width: 50px;
+    height: 30px;
+    left: -10px;
+    top: -5px;
+    cursor: pointer;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #9B6ADE;
+    border-radius: 3px;
+}
+
+#beranda {
+    display: flex;
+    padding: 50px 10%;
+}
+
+.b-left {
+    line-height: 20px;
+    padding-top: 30px;
+}
+
+.b-left h1{
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 40px;
+}
+
+button.beranda {
+    margin-top: 30px;
+}
+
+nav,
+#beranda {
+    background-color: #F4F0FA;
+}
+
+#fitur {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 10%;
+}
+#kontak {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background: #F4F0FA;    
+}
+.kontak-atas,
+.kontak-bawah {
+    padding: 10px;
+    width: 300px;
+    background-color: #bca3ff;
+}
+.card {
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 10px;
+}
+.kontak-atas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.kontak-atas ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+.kontak-atas ul li.tombol {
+    font-weight: lighter;
+    border-radius: 10px;
+    background-color: #e4daff;
+    margin: 15px 20px;
+    padding: 0 15px;
+}
+.kontak-atas ul li.tombol:hover {
+    background-color: #544d69;
+    cursor: pointer;
+}
+.kontak-atas img{
+    margin-top: 10px;
+    border: 2px solid white;
+}
+.kontak-bawah {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.kontak-bawah table tr{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.kontak-bawah table tr th {
+    margin-right: 50px;
+}
+
+footer {
+    padding: 20px;
+    background-color: #bca3ff;
+    color: black;
+    text-align: center;
+    font-weight: lighter;
+}
+
+/* Ukuran Tablet */
+@media screen and (max-width: 768px) {
+    nav ul li{
+        width: 50%;
+    }
+    button.navigasi {
+        padding: 10px;
+    }
+}
+/* Ukuran mobile*/
+@media screen and (max-width: 576px) {
+    button.navigasi {
+        display: none;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    #beranda img {
+        display: none;
+    }
+    #fitur {
+        flex-direction: column;
+    }
+    #fitur img{
+        width: 200px;
+    }
+    .f-right {
+        margin-top: 40px;
+    }
+    nav ul {
+        display: flex;
+        position: absolute;
+        right: 0;
+        flex-direction: column;
+        background-color: #F4F0FA;  
+        top: 80px;
+        width: 80%;
+        height: 100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: 1;
+        transform: translateX(100%);
+        transition: all 1s;
+    }
+    nav ul.slide {
+        transform: translateX(0);
+    }
+}
+
